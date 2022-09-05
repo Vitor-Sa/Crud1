@@ -20,7 +20,8 @@ public class MetodosCadastroPessoa {
         }
         return true;
     }
-    public boolean informacoes(){
-     return false;
+    public Pessoa informacoes(String cpf){
+        return pessoas.get(cpf);
+
     }
 }
