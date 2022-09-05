@@ -2,14 +2,14 @@ import java.util.Objects;
 
 public class Pessoa {
     private String nome;
-    private Byte idade;
+    private int idade;
     private String telefone;
     private String cpf;
     private String email;
     public Pessoa(){
     }
 
-    public Pessoa(String nome, Byte idade, String telefone, String cpf, String email) {
+    public Pessoa(String nome, int idade, String telefone, String cpf) {
         this.nome = nome;
         this.idade = idade;
         this.telefone = telefone;
@@ -38,11 +38,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Byte getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(Byte idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
