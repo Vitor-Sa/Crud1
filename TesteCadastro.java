@@ -81,5 +81,14 @@ public class TesteCadastro {
         return pessoa;
     }
 
+    public static String verInformacoes () {
+        Pessoa pessoa = new Pessoa();
+        System.out.println("Nome");
+        System.out.println("Idade");
+        System.out.println("Cpf");
+        System.out.println("E-mail");
+        System.out.println("Telefone");
+    }
+
 
 }
