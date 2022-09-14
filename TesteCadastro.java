@@ -1,21 +1,23 @@
-
 import java.util.Scanner;
 
-
 public class TesteCadastro {
-
     public static void main(String[] args) {
         MetodosCadastroPessoa mcp = new MetodosCadastroPessoa();
         Scanner scan = new Scanner(System.in);
         mostrarMenu();
 
         int comando = scan.nextInt();
-        while (comando != 5) {
+        while (comando != 5 && comando >= 1 && comando <= 5) {
 
             switch (comando) {
                 case 1:
                     Pessoa pessoa = criandoPessoa(scan);
                     mcp.adicionaPessoa(pessoa.getCpf(), pessoa);
+                    break;
+                case 2:
+                    break;
+                case 4:
+                    mcp.removePessoa(deletarPessoa(scan));
                     break;
             }
             mostrarMenu();
@@ -52,6 +54,18 @@ public class TesteCadastro {
 
         return pessoa;
 
+    }
+
+    public static String deletarPessoa(Scanner scanner) {
+        System.out.println("Digite o cpf que deseja deletar.");
+        String cpf = scanner.next();
+        return cpf;
+    }
+    public static Pessoa atualizarInformacoes(Scanner scan) {
+        System.out.println("Digite o cpf que deseja atualizar");
+        String cpf = scan.next();
+
+        return ;
     }
 
 
