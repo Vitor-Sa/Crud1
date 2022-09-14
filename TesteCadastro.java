@@ -15,7 +15,11 @@ public class TesteCadastro {
                     mcp.adicionaPessoa(pessoa.getCpf(), pessoa);
                     break;
                 case 2:
+                    Pessoa pessoa2 = atualizarInformacoes(scan);
+                    mcp.atualizar(pessoa2.getCpf(),pessoa2);
                     break;
+                case 3:
+
                 case 4:
                     mcp.removePessoa(deletarPessoa(scan));
                     break;
@@ -45,7 +49,7 @@ public class TesteCadastro {
         int idade = scan.nextInt();
         System.out.println("Digite Cpf");
         String cpf = scan.next();
-        System.out.println("Digite E-nail");
+        System.out.println("Digite E-mail");
         String email = scan.next();
         System.out.println("Digite telefone");
         String telefone = scan.next();
@@ -53,7 +57,6 @@ public class TesteCadastro {
         Pessoa pessoa = new Pessoa(nome, idade, telefone, cpf, email);
 
         return pessoa;
-
     }
 
     public static String deletarPessoa(Scanner scanner) {
@@ -64,8 +67,18 @@ public class TesteCadastro {
     public static Pessoa atualizarInformacoes(Scanner scan) {
         System.out.println("Digite o cpf que deseja atualizar");
         String cpf = scan.next();
+        System.out.println("Atualizando...");
+        System.out.println("Digite o nome");
+        String nome = scan.next();
+        System.out.println("Digite a idade");
+        int idade = scan.nextInt();
+        System.out.println("Digite E-mail");
+        String email = scan.next();
+        System.out.println("Digite telefone");
+        String telefone = scan.next();
 
-        return ;
+        Pessoa pessoa = new Pessoa(nome, idade, telefone, cpf, email);
+        return pessoa;
     }
 
 
