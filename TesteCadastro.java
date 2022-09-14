@@ -19,7 +19,7 @@ public class TesteCadastro {
                     mcp.atualizar(pessoa2.getCpf(),pessoa2);
                     break;
                 case 3:
-
+                    break;
                 case 4:
                     mcp.removePessoa(deletarPessoa(scan));
                     break;
