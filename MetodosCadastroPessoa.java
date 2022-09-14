@@ -16,6 +16,7 @@ public class MetodosCadastroPessoa {
     }
     public boolean removePessoa(String cpf){
         try{
+            System.out.println(pessoa.getNome() + "removido");
             pessoas.remove(pessoa);
         }catch (Exception e){
             e.printStackTrace();
@@ -27,11 +28,15 @@ public class MetodosCadastroPessoa {
 
     }
     public Pessoa atualizar(String cpf, Pessoa pessoa){
-        if(pessoas.containsKey(cpf)){
-            pessoas.remove(cpf);
-            pessoas.put(cpf, pessoa);
-            System.out.println(pessoa.getNome()+" Atualizado");
+        try {
+            if(pessoas.containsKey(cpf)){
+                pessoas.remove(cpf);
+                pessoas.put(cpf, pessoa);
+                System.out.println(pessoa.getNome()+" Atualizado");
+            }
+        }catch (RuntimeException rte){
+            rte.printStackTrace();
         }
-        throw new RuntimeException("Pessoa invalida");
+        return pessoa;
     }
 }
