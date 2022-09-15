@@ -60,12 +60,6 @@ public class TesteCadastro {
         return pessoa;
     }
 
-    public static String deletarPessoa(Scanner scanner) {
-        System.out.println("Digite o cpf que deseja deletar.");
-        String cpf = scanner.next();
-        return cpf;
-    }
-
     public static String dadosPessoais(Scanner scan) {
         System.out.println("Digite o cpf");
         String cpf = scan.next();
