@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-public class servicoDePessoa {
+public class ServicoDePessoa {
 
     Pessoa pessoa = new Pessoa();
     Map <String, Pessoa> pessoas = new HashMap<>();
