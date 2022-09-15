@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TesteCadastro {
     public static void main(String[] args) {
-        MetodosCadastroPessoa mcp = new MetodosCadastroPessoa();
+        ServicoDePessoa service = new ServicoDePessoa();
         Scanner scan = new Scanner(System.in);
         mostrarMenu();
 
@@ -11,17 +11,18 @@ public class TesteCadastro {
 
             switch (comando) {
                 case 1:
-                    Pessoa pessoa = criandoPessoa(scan);
-                    mcp.adicionaPessoa(pessoa.getCpf(), pessoa);
+                    Pessoa pessoa1 = criandoPessoa(scan);
+                    service.adicionaPessoa(pessoa1.getCpf(), pessoa1);
                     break;
                 case 2:
                     Pessoa pessoa2 = atualizarInformacoes(scan);
-                    mcp.atualizar(pessoa2.getCpf(),pessoa2);
+                    service.atualizar(pessoa2.getCpf(),pessoa2);
                     break;
                 case 3:
+                    service.informacoes(verInformacoes(scan));
                     break;
                 case 4:
-                    mcp.removePessoa(deletarPessoa(scan));
+                    service.removePessoa(deletarPessoa(scan));
                     break;
             }
             mostrarMenu();
@@ -81,13 +82,10 @@ public class TesteCadastro {
         return pessoa;
     }
 
-    public static String verInformacoes () {
-        Pessoa pessoa = new Pessoa();
-        System.out.println("Nome");
-        System.out.println("Idade");
-        System.out.println("Cpf");
-        System.out.println("E-mail");
-        System.out.println("Telefone");
+    public static String verInformacoes (Scanner scan) {
+
+        String cpf = scan.next();
+        return cpf;
     }
 
 
