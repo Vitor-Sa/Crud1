@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TesteCadastro {
@@ -12,18 +11,18 @@ public class TesteCadastro {
 
             switch (comando) {
                 case 1:
-                    Pessoa pessoa1 = criandoPessoa(scan);
+                    Pessoa pessoa1 = salvandoPessoa(scan);
                     service.adicionaPessoa(pessoa1.getCpf(), pessoa1);
                     break;
                 case 2:
-                    Pessoa pessoa2 = atualizarInformacoes(scan);
+                    Pessoa pessoa2 = salvandoPessoa(scan);
                     service.atualizar(pessoa2.getCpf(), pessoa2);
                     break;
                 case 3:
-                    service.informacoes(verInformacoes(scan)).mostrarInformacoes();
+                    service.informacoes(dadosPessoais(scan)).mostrarInformacoes();
                     break;
                 case 4:
-                    service.removePessoa(deletarPessoa(scan));
+                    service.removePessoa(dadosPessoais(scan));
                     break;
             }
             mostrarMenu();
@@ -43,7 +42,7 @@ public class TesteCadastro {
         System.out.println("-------------------------------------------------");
     }
 
-    public static Pessoa criandoPessoa(Scanner scan) {
+    public static Pessoa salvandoPessoa(Scanner scan) {
 
         System.out.println("Digite o nome");
         String nome = scan.next();
@@ -67,24 +66,7 @@ public class TesteCadastro {
         return cpf;
     }
 
-    public static Pessoa atualizarInformacoes(Scanner scan) {
-        System.out.println("Digite o cpf que deseja atualizar");
-        String cpf = scan.next();
-        System.out.println("Atualizando...");
-        System.out.println("Digite o nome");
-        String nome = scan.next();
-        System.out.println("Digite a idade");
-        int idade = scan.nextInt();
-        System.out.println("Digite E-mail");
-        String email = scan.next();
-        System.out.println("Digite telefone");
-        String telefone = scan.next();
-
-        Pessoa pessoa = new Pessoa(nome, idade, telefone, cpf, email);
-        return pessoa;
-    }
-
-    public static String verInformacoes(Scanner scan) {
+    public static String dadosPessoais(Scanner scan) {
         System.out.println("Digite o cpf");
         String cpf = scan.next();
 
