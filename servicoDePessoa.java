@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-public class MetodosCadastroPessoa {
+public class servicoDePessoa {
 
     Pessoa pessoa = new Pessoa();
     Map <String, Pessoa> pessoas = new HashMap<>();
@@ -8,7 +8,7 @@ public class MetodosCadastroPessoa {
     public boolean adicionaPessoa(String cpf, Pessoa pessoa){
         try{
             pessoas.put(cpf,pessoa);
-            System.out.println(pessoa.getNome()+" Salvo!");
+            System.out.println(pessoas.get(cpf)+" Salvo!");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -16,8 +16,8 @@ public class MetodosCadastroPessoa {
     }
     public boolean removePessoa(String cpf){
         try{
-            System.out.println(pessoa.getNome() + "removido");
-            pessoas.remove(pessoa);
+            System.out.println(pessoas.get(cpf) + "removido");
+            pessoas.remove(cpf);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class MetodosCadastroPessoa {
             if(pessoas.containsKey(cpf)){
                 pessoas.remove(cpf);
                 pessoas.put(cpf, pessoa);
-                System.out.println(pessoa.getNome()+" Atualizado");
+                System.out.println(pessoas.get(cpf)+" Atualizado");
             }
         }catch (RuntimeException rte){
             rte.printStackTrace();
