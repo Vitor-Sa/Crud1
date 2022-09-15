@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TesteCadastro {
@@ -16,10 +17,10 @@ public class TesteCadastro {
                     break;
                 case 2:
                     Pessoa pessoa2 = atualizarInformacoes(scan);
-                    service.atualizar(pessoa2.getCpf(),pessoa2);
+                    service.atualizar(pessoa2.getCpf(), pessoa2);
                     break;
                 case 3:
-                    service.informacoes(verInformacoes(scan));
+                    service.informacoes(verInformacoes(scan)).mostrarInformacoes();
                     break;
                 case 4:
                     service.removePessoa(deletarPessoa(scan));
@@ -65,6 +66,7 @@ public class TesteCadastro {
         String cpf = scanner.next();
         return cpf;
     }
+
     public static Pessoa atualizarInformacoes(Scanner scan) {
         System.out.println("Digite o cpf que deseja atualizar");
         String cpf = scan.next();
@@ -82,9 +84,10 @@ public class TesteCadastro {
         return pessoa;
     }
 
-    public static String verInformacoes (Scanner scan) {
-
+    public static String verInformacoes(Scanner scan) {
+        System.out.println("Digite o cpf");
         String cpf = scan.next();
+
         return cpf;
     }
 
