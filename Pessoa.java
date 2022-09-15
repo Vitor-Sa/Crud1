@@ -69,4 +69,13 @@ public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void mostrarInformacoes(){
+        System.out.println("Nome: " +getNome());
+        System.out.println("Idade: "+getIdade());
+        System.out.println("Cpf: "+getCpf());
+        System.out.println("Email: "+getEmail());
+        System.out.println("Telefone: "+getTelefone());
+    }
+
 }
